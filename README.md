@@ -22,4 +22,9 @@ sudo apt-get install -y git
 git clone https://github.com/torch/distro.git ~/torch --recursive
 cd ~/torch; bash install-deps;
 ./install.sh
+
+sudo apt install -y python-pip
+sudo pip install --upgrade pip
+pip install theano
+
 ```
