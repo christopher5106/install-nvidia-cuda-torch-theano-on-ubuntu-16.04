@@ -15,7 +15,13 @@ sudo cp -r /usr/local/cuda-8.0 /usr/local/cuda-8.0-cudnn-5.1
 sudo cp cuda/include/cudnn.h /usr/local/cuda-8.0-cudnn-5.1/include/
 sudo cp cuda/lib64/* /usr/local/cuda-8.0-cudnn-5.1/lib64/
 rm -r cuda
-rm cudnn-8.0-linux-x64-v5.1.tgz
+#scp cudnn-7.0-linux-x64-v4.0-prod.tgz root@s4:
+tar xvzf cudnn-7.0-linux-x64-v4.0-prod.tgz
+sudo cp -r /usr/local/cuda-8.0 /usr/local/cuda-8.0-cudnn-4.0
+sudo cp cuda/include/cudnn.h /usr/local/cuda-8.0-cudnn-4.0/include/
+sudo cp cuda/lib64/* /usr/local/cuda-8.0-cudnn-4.0/lib64/
+rm -r cuda
+rm cudnn-8.0-linux-x64-v5.1.tgz cudnn-7.0-linux-x64-v4.0-prod.tgz
 rm cuda-repo-ubuntu1604_8.0.44-1_amd64.deb
 
 sudo apt-get install -y git
@@ -26,5 +32,5 @@ cd ~/torch; bash install-deps;
 sudo apt install -y python-pip
 sudo pip install --upgrade pip
 pip install theano
-
+pip install nltk
 ```
